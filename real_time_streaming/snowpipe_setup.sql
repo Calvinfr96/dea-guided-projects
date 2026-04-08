@@ -1,0 +1,34 @@
+USE ROLE ACCOUNTADMIN;
+USE WAREHOUSE COMPUTE_WH;
+
+CREATE OR REPLACE DATABASE MYDB;
+USE SCHEMA MYDB.PUBLIC;
+
+CREATE OR REPLACE STORAGE INTEGRATION S3_INT
+    TYPE = EXTERNAL_STAGE
+    STORAGE_PROVIDER = 'S3'
+    ENABLED = TRUE
+    STORAGE_AWS_ROLE_ARN = 'arn:aws:iam::515424600331:role/real-time-streaming-snowpipe-role'
+    STORAGE_ALLOWED_LOCATIONS = ('s3://real-time-streaming-data-bucket/data/');
+
+DESC INTEGRATION S3_INT; -- Use the STORAGE_AWS_IAM_USER_ARN and STORAGE_AWS_ENTERNAL_ID properties to update the trust policy of the IAM role.
+
+CREATE OR REPLACE STAGE MYDB.PUBLIC.S3_STAGE
+    STORAGE_INTEGRATION = S3_INT
+    URL= 's3://real-time-streaming-data-bucket/data/';
+  
+ls @MYDB.PUBLIC.S3_STAGE; -- Tests storage integration.
+
+CREATE OR REPLACE TABLE MYDB.PUBLIC.MYTABLE
+(
+    DATA VARIANT -- Semi-structured JSON data from API Gateway
+);
+
+CREATE OR REPLACE PIPE MYDB.PUBLIC.MYPIPE AUTO_INGEST = TRUE AS
+    COPY INTO MYDB.PUBLIC.MYTABLE
+    FROM @MYDB.PUBLIC.S3_STAGE
+    FILE_FORMAT = (TYPE = 'JSON');
+
+SHOW PIPES; -- Use the notification_channel property to create an S3 event notification.
+
+SELECT * FROM MYDB.PUBLIC.MYTABLE;

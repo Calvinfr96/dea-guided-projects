@@ -1,0 +1,37 @@
+1) Question: Create a new custom IAM policy to grant read-only access to all buckets in Amazon S3 instead of a specific bucket and attach it to your IAM role?
+Hint: You need to modify the policy's "Resource" section.
+Note: Remember to consider the principle of least privilege and ensure that granting access to all buckets aligns with your specific security requirements.
+
+2) Question: Create a new IAM role and attach below json as its policy.
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "logs:CreateLogGroup",
+            "Resource": "arn:aws:logs:us-east-1:294845879996:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": [
+                "arn:aws:logs:us-east-1:294845879996:log-group:/aws/lambda/training:*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "kinesis:*"
+            ],
+            "Resource": [
+                "arn:aws:kinesis:us-east-1:294845879996:stream:training/*"
+            ]
+        }
+    ]
+}
+Find the error and clear it
+

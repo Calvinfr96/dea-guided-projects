@@ -1,0 +1,4 @@
+# S3 S3 Cross Region Replication Project
+
+## Overview
+The goal of this project is to perform a near real-time, cross-region migration of data from one S3 bucket to another S3 bucket using AWS Database Migration Service (DMS). AWS DMS is used to migrate data stored in AWS Relational Database Service (RDS) tables to S3 buckets. DMS needs to be given permission to access data in RDS tables and write them to S3 buckets. AWS Secrets Manager will be used to establish a secure connection between RDS and DMS. When DMS transfers the data from RDS to an S3 bucket in one region, AWS SNS, SQS, and Lambda will be used to transfer the data to an S3 bucket in another region.

@@ -1,0 +1,44 @@
+{
+
+"rules": [
+  {
+    "rule-type": "selection",
+    "rule-id": "1",
+    "rule-name": "includeAll",
+    "object-locator": {
+      "schema-name": "retail",
+      "table-name": "%"
+    },
+    "rule-action": "include"
+  },
+  {
+    "rule-type": "transformation",
+    "rule-id": "2",
+    "rule-name": "renameEmail",
+    "rule-target": "column",
+    "object-locator": {
+      "schema-name": "retail",
+      "table-name": "customers",
+      "column-name": "email"
+    },
+    "rule-action": "rename",
+    "value": "masked_email"
+  },
+  {
+    "rule-type": "transformation",
+    "rule-id": "3",
+    "rule-name": "addLoadTS",
+    "rule-target": "column",
+    "object-locator": {
+      "schema-name": "retail",
+      "table-name": "%"
+    },
+    "rule-action": "add-column",
+    "value": "load_timestamp",
+    "data-type": {
+      "type": "datetime"
+    }
+  }
+]
+
+}

@@ -27,7 +27,7 @@
     - Use the code from `create_database.sql` to create the `retail` database and necessary tables, as well as insert test data into those tables.
 
 ## AWS DMS
-- DMS tasks used provisioned instances (compute) and endpoints (source and destination) to perform the migration. To create a task, you must first create a provisioned instance and create an endpoint for the source and destination S3 buckets.
+- DMS tasks use provisioned instances (compute) and endpoints (source and destination) to perform data migration. To create a task, you must first create a provisioned instance and create an endpoint for the source and destination S3 buckets.
 - Create a replication instance in the source region, which will provide the compute power necessary to perform the data migration:
     - Select the smallest instance class, as the task won't be migrating a lot of data.
     - Choose 'Dev or test workload (Single-AZ)' in instance configuration.

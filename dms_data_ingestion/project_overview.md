@@ -1,0 +1,4 @@
+# DMS Data Ingestion Project
+
+## Overview
+The goal of this project is demonstrate near real-time data migration and change data capture (CDC) from an Amazon Relational Database Service (RDS) database to an S3 bucket using AWS Data Migration Service (DMS). DMS is used to migrate data stored in RDS tables to S3 buckets. DMS needs to be given permissions to access data in these tables and write them to S3 buckets. AWS Secrets Manager can be used to establish a secure connection between RDS and DMS. As incremental changes are made to the data in RDS, a DMS task will perform CDC and automatically transfer the updated data to S3.

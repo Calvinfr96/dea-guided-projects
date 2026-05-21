@@ -1,0 +1,4 @@
+# ECR Lambda Local Deployment Project
+
+## Overview
+This project demonstrates the use of a Python script to access the Calendly API to extract outputs such as event dates and times. This script is used in a Docker image that is pushed to AWS Elastic Container Registry (ECR). The ECR Docker image is then used to execute a Lambda function. The Lambda function performs the API calls and stores the response in an S3 bucket. Using a Docker image to store the Python script allows for more flexibility as code stored directly in a Lambda function can only be modified by one user at a time. Code stored in an ECR Docker image can be edited more flexibly by multiple users.

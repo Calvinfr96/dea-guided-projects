@@ -1,0 +1,23 @@
+
+# Calendly AWS Lambda Integration
+
+This project integrates the **Calendly API** with **AWS Lambda** using a Docker container.
+
+## 📝 **Project Overview**
+This project allows automated scheduling and data retrieval from Calendly using a Lambda function deployed in a Docker container.
+
+##  **Setup**
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/Raiyan-DEA/calendly.git
+Build the Docker image:
+bash
+Copy
+Edit
+sh commands.sh
+
+## Calendly App Info
+- Client ID: b67yXODshkFaYG2wMqFNGgSziLXcN_JVGAitdB-vUR8
+- Client Secret: veInLhc_IULrT9dMheCTGarFea8d1YZOYQlrLTZwoK0
+- Webhook Signing Key: khAM-MAibdZhZwNwQKxFaY4R1CDhXXEAIqRcnws7934
+- Personal Access Token: eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNzc5Mzg5OTcwLCJqdGkiOiJmMjM0MjMzMC1hNTkwLTRkMTItODk5Zi1hZjJkNzE2NjllODIiLCJ1c2VyX3V1aWQiOiI3MmY1M2FlNy02ODVhLTRhZTUtYjE1MC03NjlmNTk0ZTFlYzYiLCJzY29wZSI6ImF2YWlsYWJpbGl0eTpyZWFkIGF2YWlsYWJpbGl0eTp3cml0ZSBldmVudF90eXBlczpyZWFkIGV2ZW50X3R5cGVzOndyaXRlIGxvY2F0aW9uczpyZWFkIHJvdXRpbmdfZm9ybXM6cmVhZCBzaGFyZXM6d3JpdGUgc2NoZWR1bGVkX2V2ZW50czpyZWFkIHNjaGVkdWxlZF9ldmVudHM6d3JpdGUgc2NoZWR1bGluZ19saW5rczp3cml0ZSBncm91cHM6cmVhZCBvcmdhbml6YXRpb25zOnJlYWQgb3JnYW5pemF0aW9uczp3cml0ZSB1c2VyczpyZWFkIGFjdGl2aXR5X2xvZzpyZWFkIGRhdGFfY29tcGxpYW5jZTp3cml0ZSBvdXRnb2luZ19jb21tdW5pY2F0aW9uczpyZWFkIHdlYmhvb2tzOnJlYWQgd2ViaG9va3M6d3JpdGUifQ.RcbR4XySGeIrKtkJ7WFvqXxVRiOFORPTdcnE5RoqNa7M61dzl9hzHj96Vmy0l1tsE51_Fko1RS8SOjO8j-c7Zw

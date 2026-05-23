@@ -1,0 +1,4 @@
+# ELT Data Pipeline (Airflow + Snowflake) Project
+
+## Overview
+This project demonstrates the use of Airflow and Snowflake to build an ELT data pipeline. It is designed to demonstrate use of Apache Airflow as the orchestration engine of the pipeline. Snowflake will be used to implement data ingestion, loading, and transformation using the Medallion architecture. Airflow uses a Python script to load raw data from an HTTP endpoint into an S3 bucket. The raw data is then loaded into the Bronze layer in Snowflake. Data will then be cleaned and normalized before being transferred to the Silver layer. Finally, the data will be aggregated before being transferred to the Gold layer.
